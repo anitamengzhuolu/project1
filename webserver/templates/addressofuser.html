@@ -1,0 +1,31 @@
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <h1>Address</h1>
+  <div style="align:center">
+    <table>
+      <tr>
+        <td>name</td>
+        <td>city</td>
+	<td>street_apt</td>
+	<td>country</td>	
+      {% for n in data %}
+        <tr>
+          <td>{{n[1]}}</td>
+          <td>{{n[2]}}</td>
+          <td>{{n[3]}}</td>
+	  <td>{{n[4]}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <h1>All Users</h1>
+<p><a href="/experts">Expert Users</a></p>  
+  <div style="align:center">
+    <table>
+     <tr>
+          <td>Username</td>
+          <td>Music Genre Preference</td>
+          <td>Age</td>
+        </tr>
+
+      {% for n in data %}
+        <tr>
+          <td>{{n[0]}}</td>
+          <td>{{n[1]}}</td>
+          <td>{{n[2]}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+<form method="POST" action="/findaddress">
+<p>Input username to find address: <input type="text" name="username"> <input type="submit" value="findaddress"></p>
+</form>
+
+</body>
+</html>
+

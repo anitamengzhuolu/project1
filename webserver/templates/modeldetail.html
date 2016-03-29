@@ -1,0 +1,104 @@
+<html>
+  <style>
+    body{
+      font-size: 15pt;
+      font-family: arial;
+    }
+  </style>
+
+
+<body>
+  <h1>Model Details</h1>
+  <div style="align:center">
+    <table>
+      {% for n in data %}
+        <tr>
+          <td>Wear Type: {{n[1]}}</td>
+          <td>Connection Type: {{n[2]}}</td>
+          <td>Official Price: {{n[3]}}</td>
+        </tr>
+      {% endfor %}
+    </table>
+      <table>
+          {% for n in data %}
+        <tr>
+          <td>Brand: {{n[5]}}</td>
+          <td>Modelname: {{n[6]}}</td>
+          <td>Weight: {{n[7]}}</td>
+          <td>Frequency Response: {{n[8]}}</td>
+          <td>Factor: {{n[9]}}</td>
+        </tr>
+          {% endfor %}
+          </table>>
+            <table>
+          {% for n in data %}
+          <tr>
+      <td>Description: {{n[4]}}</td>
+          </tr>
+          {% endfor %}
+          </table>
+      {% for n in data %}
+      <img src={{n[10]}}  alt={{n[6]}} />
+      {% endfor %}
+<h1>Feedbacks</h1>
+<table>
+ {% for n in feedback %}
+          <tr>
+<td>{{n[5]}}</td>
+      <td>{{n[0]}}: </td>
+      <td>{{n[4]}}</td>
+<td>;rating: {{n[3]}}</td>
+          </tr>
+          {% endfor %}
+</table>
+
+<h1>Expert Assesments</h1>
+<table>
+ {% for n in assessment %}
+          <tr>
+      <td>{{n[2]}} </td>
+      <td>Expert {{n[0]}}: </td>
+      <td><a href={{n[3]}}>{{n[4]}}</a></td>
+<td><img src={{n[5]}}  alt={{n[4]}} /></td>
+          </tr>
+          {% endfor %}
+</table>
+<h1>Buy it from</h1>
+<table>
+ {% for n in links %}
+          <tr>
+      <td><a href={{n[1]}}>{{n[3]}}: </a></td>
+      <td>${{n[0]}} </td>
+          </tr>
+          {% endfor %}
+</table>
+
+<h1>Users interested in buying this?</h1>
+<table>
+ {% for n in usersclick %}
+          <tr>
+      <td>{{n[0]}}</td>
+          </tr>
+          {% endfor %}
+</table>
+
+  </div>
+
+
+<h1>Have a feedback?</h1>
+<form method="POST" action="/comment">
+Rating:
+<input type="radio" name="rating" value=1 checked> 1
+  <input type="radio" name="rating" value=2> 2
+  <input type="radio" name="rating" value=3> 3
+  <input type="radio" name="rating" value=4> 4  
+  <input type="radio" name="rating" value=5> 5  
+<p>Leave a comment for this model: <input type="text" name="comment"> <input type="submit" value="comment"></p>
+</form>
+
+
+
+</body>
+</html>
+
+
